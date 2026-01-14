@@ -12,35 +12,55 @@ grow_vertical = 2
 script = ExtResource("1_5bybn")
 
 [node name="ThresholdLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 188.385
-offset_bottom = 33.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.087000005
+anchor_top = 0.033
+anchor_right = 0.087000005
+anchor_bottom = 0.033
+offset_left = -89.22401
+offset_top = -11.384001
+offset_right = 89.16097
+offset_bottom = 11.615999
 text = "Round: 1 | Target: 100"
 
 [node name="ScoreLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 40.0
-offset_right = 113.0
-offset_bottom = 63.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053000003
+anchor_top = 0.079
+anchor_right = 0.053000003
+anchor_bottom = 0.079
+offset_left = -51.056004
+offset_top = -11.192001
+offset_right = 51.943996
+offset_bottom = 11.807999
 text = "Score: 0 / 100"
 
 [node name="TimerLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 70.0
-offset_right = 89.0
-offset_bottom = 93.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.126
+anchor_right = 0.043
+anchor_bottom = 0.126
+offset_left = -39.536003
+offset_top = -11.648003
+offset_right = 39.463997
+offset_bottom = 11.351997
 text = "Time: 60.0"
 
 [node name="QuestionLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 300.0
-offset_top = 150.0
-offset_right = 900.0
-offset_bottom = 184.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25800002
+anchor_right = 0.5
+anchor_bottom = 0.25800002
+offset_left = -276.0
+offset_top = -17.184006
+offset_right = 324.0
+offset_bottom = 16.815994
 theme_override_font_sizes/font_size = 24
 text = "Question appears here"
 autowrap_mode = 2
@@ -52,3 +72,6 @@ offset_top = 300.0
 offset_right = 340.0
 offset_bottom = 340.0
 theme_override_constants/separation = 10
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
