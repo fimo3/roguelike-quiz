@@ -1,0 +1,157 @@
+[gd_scene load_steps=25 format=3 uid="uid://du5h5luje6ij2"]
+
+[ext_resource type="Script" uid="uid://c88jmbqr012hg" path="res://Scripts/Main.gd" id="1_r150o"]
+[ext_resource type="Texture2D" uid="uid://c4rpcm1xy8k30" path="res://Assets/Answer.png" id="2_idj7w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kln2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgh2o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbw6q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1gob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jw32o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50glp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vy5pj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmxlf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kpch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grg3l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frkhe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1p5hy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1m7h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_erwvk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w5on"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_346fj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0sclb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxkr1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fq0cl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwpts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyqft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tgeq"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r150o")
+
+[node name="VBoxContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -57.0
+offset_right = 205.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+offset_right = 410.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "Българска История - Quiz"
+
+[node name="QuitButtonImage" type="NinePatchRect" parent="VBoxContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = 39.0
+offset_right = 195.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_idj7w")
+region_rect = Rect2(-0.140097, 0, 100.14, 51)
+patch_margin_left = 12
+patch_margin_top = 13
+patch_margin_right = 12
+patch_margin_bottom = 13
+
+[node name="StartButtonImage" type="NinePatchRect" parent="VBoxContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -31.0
+offset_right = 195.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_idj7w")
+region_rect = Rect2(-0.140097, 0, 100.14, 51)
+patch_margin_left = 12
+patch_margin_top = 13
+patch_margin_right = 12
+patch_margin_bottom = 13
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+offset_top = 50.0
+offset_right = 410.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kln2b")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rgh2o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pbw6q")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_v1gob")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jw32o")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_50glp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vy5pj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bmxlf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4kpch")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_grg3l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_frkhe")
+text = "Start
+"
+icon_alignment = 1
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+offset_top = 120.0
+offset_right = 410.0
+offset_bottom = 170.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1p5hy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_h1m7h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_erwvk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2w5on")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_346fj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0sclb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sxkr1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fq0cl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hwpts")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jyqft")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3tgeq")
+text = "Quit
+"

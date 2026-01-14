@@ -1,0 +1,25 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Roguelike quiz"
+run/main_scene="uid://du5h5luje6ij2"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+GameManager="*res://Scripts/GameManager.gd"
+QuestionsDatabase="*res://Scripts/QuestionsDatabase.gd"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
