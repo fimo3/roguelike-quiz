@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://du5h5luje6ij2"]
+[gd_scene load_steps=27 format=3 uid="uid://du5h5luje6ij2"]
 
 [ext_resource type="Script" uid="uid://c88jmbqr012hg" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="Texture2D" uid="uid://c4rpcm1xy8k30" path="res://Assets/Answer.png" id="2_idj7w"]
 [ext_resource type="Texture2D" uid="uid://3m47g144jf6w" path="res://Assets/pixilart-drawing2.png" id="2_kln2b"]
+[ext_resource type="AudioStream" uid="uid://dnfhrttp0dwus" path="res://Assets/game-minecraft-gaming-background-music-402451.mp3" id="4_rgh2o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kln2b"]
 
@@ -171,3 +172,11 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jyqft")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3tgeq")
 text = "Quit
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rgh2o")
+pitch_scale = 0.92
+autoplay = true
+mix_target = 1
+max_polyphony = 6
+bus = &"New Bus"

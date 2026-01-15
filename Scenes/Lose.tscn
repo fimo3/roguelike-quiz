@@ -277,7 +277,7 @@ position = Vector2(576, 324)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_uv6j6")
 autoplay = "default"
-frame_progress = 0.927008
+frame_progress = 0.720625
 
 [node name="GameOverLabel" type="Label" parent="."]
 layout_mode = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dxlt8gv3h8jt1"]
+[gd_scene load_steps=22 format=3 uid="uid://dxlt8gv3h8jt1"]
 
 [ext_resource type="Script" uid="uid://bi7pyqv3elbpb" path="res://Scripts/Shop.gd" id="1_kjfcx"]
 [ext_resource type="Texture2D" uid="uid://diebhrler7d71" path="res://Assets/bg2.png" id="2_1mgah"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b1chd6arx5cd5" path="res://Assets/y.png" id="6_gufdo"]
 [ext_resource type="Texture2D" uid="uid://bghw3hdxi18ho" path="res://Assets/go.png" id="7_m1c0q"]
 [ext_resource type="Texture2D" uid="uid://7j2ue71rsq87" path="res://Assets/lev.png" id="12_r8bg4"]
+[ext_resource type="AudioStream" uid="uid://dnfhrttp0dwus" path="res://Assets/game-minecraft-gaming-background-music-402451.mp3" id="14_dael7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dael7"]
 
@@ -164,3 +165,11 @@ texture = ExtResource("6_ct2yw")
 position = Vector2(19, 57)
 scale = Vector2(0.38, 0.38)
 texture = ExtResource("12_r8bg4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_dael7")
+pitch_scale = 0.7
+autoplay = true
+mix_target = 1
+max_polyphony = 6
+bus = &"New Bus"

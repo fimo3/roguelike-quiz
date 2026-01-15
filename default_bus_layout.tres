@@ -1,0 +1,59 @@
+[gd_resource type="AudioBusLayout" load_steps=7 format=3 uid="uid://ep7xhjio45gl"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
+resource_name = "Reverb"
+room_size = 1.0
+damping = 1.0
+spread = 0.02
+hipass = 0.68
+wet = 0.23
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_j3pel"]
+resource_name = "Distortion"
+mode = 2
+pre_gain = 38.92
+keep_hf_hz = 1042.0
+drive = 0.6
+post_gain = -37.49
+
+[sub_resource type="AudioEffectRecord" id="AudioEffectRecord_j3pel"]
+resource_name = "Record"
+format = 2
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_j3pel"]
+resource_name = "Phaser"
+range_min_hz = 1160.0
+rate_hz = 1.991
+depth = 0.3
+
+[sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_j3pel"]
+resource_name = "HardLimiter"
+pre_gain_db = 16.0
+ceiling_db = -6.35
+release = 1.95
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_j3pel"]
+resource_name = "PitchShift"
+pitch_scale = 0.99
+fft_size = 1
+
+[resource]
+bus/0/volume_db = 2.24926
+bus/1/name = &"New Bus"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -3.54298
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectDistortion_j3pel")
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectRecord_j3pel")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectPhaser_j3pel")
+bus/1/effect/3/enabled = true
+bus/1/effect/4/effect = SubResource("AudioEffectHardLimiter_j3pel")
+bus/1/effect/4/enabled = true
+bus/1/effect/5/effect = SubResource("AudioEffectPitchShift_j3pel")
+bus/1/effect/5/enabled = true
