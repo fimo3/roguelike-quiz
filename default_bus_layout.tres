@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=7 format=3 uid="uid://ep7xhjio45gl"]
+[gd_resource type="AudioBusLayout" load_steps=8 format=3 uid="uid://ep7xhjio45gl"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
@@ -10,11 +10,11 @@ wet = 0.23
 
 [sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_j3pel"]
 resource_name = "Distortion"
-mode = 2
-pre_gain = 38.92
-keep_hf_hz = 1042.0
-drive = 0.6
-post_gain = -37.49
+mode = 3
+pre_gain = 30.27
+keep_hf_hz = 6582.0
+drive = 0.59
+post_gain = -51.54
 
 [sub_resource type="AudioEffectRecord" id="AudioEffectRecord_j3pel"]
 resource_name = "Record"
@@ -23,7 +23,9 @@ format = 2
 [sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_j3pel"]
 resource_name = "Phaser"
 range_min_hz = 1160.0
+range_max_hz = 1870.0
 rate_hz = 1.991
+feedback = 0.6
 depth = 0.3
 
 [sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_j3pel"]
@@ -36,6 +38,29 @@ release = 1.95
 resource_name = "PitchShift"
 pitch_scale = 0.99
 fft_size = 1
+
+[sub_resource type="AudioEffectEQ21" id="AudioEffectEQ21_j3pel"]
+resource_name = "EQ21"
+band_db/22_hz = -4.2
+band_db/32_hz = -15.3
+band_db/44_hz = -3.4
+band_db/63_hz = -9.4
+band_db/90_hz = -9.3
+band_db/125_hz = 5.9
+band_db/175_hz = 5.9
+band_db/250_hz = 6.8
+band_db/350_hz = 5.1
+band_db/500_hz = -3.4
+band_db/700_hz = 4.2
+band_db/1000_hz = 2.6
+band_db/1400_hz = 6.0
+band_db/2000_hz = -5.1
+band_db/2800_hz = 5.9
+band_db/4000_hz = -0.9
+band_db/5600_hz = 5.9
+band_db/11000_hz = -4.2
+band_db/16000_hz = 3.4
+band_db/22000_hz = 4.0
 
 [resource]
 bus/0/volume_db = 2.24926
@@ -57,3 +82,5 @@ bus/1/effect/4/effect = SubResource("AudioEffectHardLimiter_j3pel")
 bus/1/effect/4/enabled = true
 bus/1/effect/5/effect = SubResource("AudioEffectPitchShift_j3pel")
 bus/1/effect/5/enabled = true
+bus/1/effect/6/effect = SubResource("AudioEffectEQ21_j3pel")
+bus/1/effect/6/enabled = true

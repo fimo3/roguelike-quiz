@@ -45,7 +45,8 @@ script = ExtResource("1_kjfcx")
 [node name="background" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="background"]
-scale = Vector2(4.50694, 4.50694)
+position = Vector2(-12.4445, -7)
+scale = Vector2(4.6875, 4.6875)
 texture = ExtResource("2_1mgah")
 centered = false
 
@@ -63,7 +64,6 @@ polygon = PackedVector2Array(98, 96, 101, 80, 92, 76, 86, 79, 79, 70, 52, 10, 86
 
 [node name="Zh" type="RigidBody2D" parent="background"]
 position = Vector2(1000, 100)
-mass = 5.0
 script = ExtResource("3_r8bg4")
 
 [node name="Sprite2D" type="Sprite2D" parent="background/Zh"]
@@ -86,10 +86,10 @@ polygon = PackedVector2Array(100, 121, 100, 107, 102, 102, 107, 100, 153, 100, 1
 
 [node name="CoinsLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 10.0
+offset_left = 17.0
 offset_top = 10.0
-offset_right = 50.0
-offset_bottom = 33.0
+offset_right = 74.0
+offset_bottom = 38.0
 theme_override_font_sizes/font_size = 20
 text = "0 leva"
 
@@ -162,13 +162,13 @@ scale = Vector2(-0.68, 0.422)
 texture = ExtResource("6_ct2yw")
 
 [node name="Lev" type="Sprite2D" parent="."]
-position = Vector2(19, 57)
+position = Vector2(28, 57)
 scale = Vector2(0.38, 0.38)
 texture = ExtResource("12_r8bg4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_dael7")
-pitch_scale = 0.7
+pitch_scale = 0.8
 autoplay = true
 mix_target = 1
 max_polyphony = 6

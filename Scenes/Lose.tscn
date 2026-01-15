@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://ca4svixki2bfr"]
+[gd_scene load_steps=66 format=3 uid="uid://ca4svixki2bfr"]
 
 [ext_resource type="Script" uid="uid://dwwa4m138xrp3" path="res://Scripts/Lose.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cru16y3wh6hex" path="res://Assets/frame_00_delay-0.03s3.png" id="2_uypod"]
@@ -62,6 +62,8 @@
 [ext_resource type="Texture2D" uid="uid://tnd7ei8wwihv" path="res://Assets/frame_58_delay-0.04s3.png" id="60_lmpkc"]
 [ext_resource type="Texture2D" uid="uid://jgqh51r2nuwr" path="res://Assets/frame_59_delay-0.03s3.png" id="61_3jb3f"]
 [ext_resource type="Texture2D" uid="uid://d1glulp5bg1j8" path="res://Assets/frame_60_delay-0.03s3.png" id="62_w8ch7"]
+[ext_resource type="Texture2D" uid="uid://c2rn0a8lyodu8" path="res://Assets/gameover.png" id="63_hoqk3"]
+[ext_resource type="AudioStream" uid="uid://dnfhrttp0dwus" path="res://Assets/game-minecraft-gaming-background-music-402451.mp3" id="63_vvvwy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uv6j6"]
 animations = [{
@@ -277,24 +279,12 @@ position = Vector2(576, 324)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_uv6j6")
 autoplay = "default"
-frame_progress = 0.720625
+frame_progress = 0.058038
 
-[node name="GameOverLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = -100.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "НЕУСПЕШНО!"
-horizontal_alignment = 1
+[node name="Gameover" type="Sprite2D" parent="."]
+position = Vector2(588, 213)
+scale = Vector2(3.13889, 3.13889)
+texture = ExtResource("63_hoqk3")
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
@@ -326,5 +316,13 @@ offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Опитай пак"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("63_vvvwy")
+pitch_scale = 0.35
+autoplay = true
+mix_target = 1
+max_polyphony = 6
+bus = &"New Bus"
 
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
