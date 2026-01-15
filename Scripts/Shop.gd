@@ -10,6 +10,7 @@ extends Control
 @onready var hat = $hat
 @onready var boot_left = $bootLeft
 @onready var boot_right = $bootRight
+@onready var alarm = $AlarmClock90867
 
 # Sample armor data - can be moved to JSON later
 var available_armor = [
@@ -109,9 +110,11 @@ func _on_buy_pressed(armor: Dictionary):
 		update_coins_display()
 		populate_shop() # Refresh shop display
 		activate_armour()
+		win()
 
 func _on_continue_pressed():
 	get_tree().change_scene_to_file("res://Scenes/QuizRound.tscn")
+
 func activate_armour():
 	if !GameManager.equipped_armor.is_empty():
 		for eq in GameManager.equipped_armor:
@@ -125,3 +128,9 @@ func activate_armour():
 			elif eq.name == "Ръкавици на точността":
 				left_glove.visible = true
 				right_glove.visible = true
+
+func win():
+	if GameManager.equipped_armor.size() == 4:
+		alarm.play(0.0)
+		await get_tree().create_timer(6).timeout
+		get_tree().change_scene_to_file("res://Scenes/Main.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dxlt8gv3h8jt1"]
+[gd_scene load_steps=23 format=3 uid="uid://dxlt8gv3h8jt1"]
 
 [ext_resource type="Script" uid="uid://bi7pyqv3elbpb" path="res://Scripts/Shop.gd" id="1_kjfcx"]
 [ext_resource type="Texture2D" uid="uid://diebhrler7d71" path="res://Assets/bg2.png" id="2_1mgah"]
@@ -14,20 +14,21 @@
 [ext_resource type="Texture2D" uid="uid://bghw3hdxi18ho" path="res://Assets/go.png" id="7_m1c0q"]
 [ext_resource type="Texture2D" uid="uid://7j2ue71rsq87" path="res://Assets/lev.png" id="12_r8bg4"]
 [ext_resource type="AudioStream" uid="uid://dnfhrttp0dwus" path="res://Assets/game-minecraft-gaming-background-music-402451.mp3" id="14_dael7"]
+[ext_resource type="AudioStream" uid="uid://bkwlnnrwu32sr" path="res://Assets/alarm-clock-90867.mp3" id="15_gufdo"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dael7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gufdo"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ox0pj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvogg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_estnu"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgt2b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk6g2"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgt2b"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_estnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvogg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ox0pj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gufdo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dael7"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -107,13 +108,13 @@ offset_left = 1070.0
 offset_top = 574.0
 offset_right = 1148.0
 offset_bottom = 642.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dael7")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gufdo")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ox0pj")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wvogg")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_estnu")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mk6g2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kgt2b")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mk6g2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_estnu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wvogg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ox0pj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gufdo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dael7")
 
 [node name="Go" type="Sprite2D" parent="."]
 position = Vector2(1110, 611)
@@ -172,4 +173,7 @@ pitch_scale = 0.8
 autoplay = true
 mix_target = 1
 max_polyphony = 6
-bus = &"New Bus"
+
+[node name="AlarmClock90867" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(372, 421)
+stream = ExtResource("15_gufdo")

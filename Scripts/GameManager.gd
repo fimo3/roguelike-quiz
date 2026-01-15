@@ -1,6 +1,6 @@
 extends Node
 
-var coins: int = 0
+var coins: int = 10
 var current_round: int = 1
 var score_threshold: int = 100
 var owned_armor: Array = []
@@ -22,7 +22,7 @@ func reset_round_modifiers():
 	time_multiplier = 1.0
 	point_multiplier = 1.0
 	flat_bonus = 0
-	current_score = 0
+	current_score = 200
 	
 	for armor in equipped_armor:
 		apply_armor_effects(armor)
@@ -42,7 +42,7 @@ func add_score(points: int):
 
 func decrease_score(points: int):
 	#var final_points = int((points + flat_bonus) * point_multiplier)
-	if current_score == 0:
+	if current_score <= 0:
 		points = 0
 	current_score += points
 	return points
@@ -63,8 +63,8 @@ func complete_round():
 		return false
 
 func calculate_coins_earned() -> int:
-	var base_coins = 10 * current_round
-	var bonus = int((current_score - score_threshold) / 10.0)
+	var base_coins = 0
+	var bonus = int((current_score) / 10.0)
 	return base_coins + bonus
 
 func buy_armor(armor: Dictionary) -> bool:
