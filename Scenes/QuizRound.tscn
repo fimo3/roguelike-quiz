@@ -18,9 +18,9 @@ anchor_left = 0.087000005
 anchor_top = 0.033
 anchor_right = 0.087000005
 anchor_bottom = 0.033
-offset_left = -89.22401
+offset_left = -90.22401
 offset_top = -11.384001
-offset_right = 89.16097
+offset_right = 88.16097
 offset_bottom = 11.615999
 text = "Round: 1 | Target: 100"
 
@@ -32,9 +32,9 @@ anchor_top = 0.079
 anchor_right = 0.053000003
 anchor_bottom = 0.079
 offset_left = -51.056004
-offset_top = -11.192001
+offset_top = -18.192001
 offset_right = 51.943996
-offset_bottom = 11.807999
+offset_bottom = 4.8079987
 text = "Score: 0 / 100"
 
 [node name="TimerLabel" type="Label" parent="."]
@@ -45,9 +45,9 @@ anchor_top = 0.126
 anchor_right = 0.043
 anchor_bottom = 0.126
 offset_left = -39.536003
-offset_top = -11.648003
+offset_top = -3.6480026
 offset_right = 39.463997
-offset_bottom = 11.351997
+offset_bottom = 19.351997
 text = "Time: 60.0"
 
 [node name="QuestionLabel" type="Label" parent="."]
@@ -75,3 +75,11 @@ theme_override_constants/separation = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="CoinLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 56.0
+offset_right = 70.0
+offset_bottom = 79.0
+text = "Coins: $0"

@@ -5,10 +5,11 @@ extends Control
 @onready var score_label = $ScoreLabel
 @onready var timer_label = $TimerLabel
 @onready var threshold_label = $ThresholdLabel
+@onready var coin_label = $CoinLabel
 
 var current_question: Dictionary = {}
-var round_time: float = 60.0
-var base_round_time: float = 60.0
+var round_time: float = 120.0
+var base_round_time: float = 120.0
 
 func _ready():
 	GameManager.reset_round_modifiers()
@@ -17,14 +18,18 @@ func _ready():
 	load_next_question()
 
 func _process(delta):
-	round_time -= delta
-	timer_label.text = "Time: %.1f" % round_time
-	
 	if round_time <= 0:
+		round_time = 0;
 		end_round()
+		question_label.queue_free()
+		answer_container.queue_free()
+	else:
+		round_time -= delta
+	timer_label.text = "Time: %.1f" % round_time
+	_on_score_change()
 
 func load_next_question():
-	current_question = QuestionsDatabase.get_random_question()
+	current_question = QuestionsDatabase.get_random_question(GameManager.current_round - 1)
 	
 	if current_question.is_empty():
 		push_error("No questions available!")
@@ -65,7 +70,7 @@ func _on_answer_selected(answer_index: int):
 	update_ui()
 	await get_tree().create_timer(0.5).timeout
 	
-	if GameManager.current_score >= GameManager.score_threshold:
+	if GameManager.current_score >= GameManager.score_threshold or round_time <= 0:
 		end_round()
 	else:
 		load_next_question()
@@ -96,4 +101,8 @@ func end_round():
 		add_child(label)
 		
 		await get_tree().create_timer(2.0).timeout
-		get_tree().change_scene_to_file("res://Main.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+		
+func _on_score_change():
+	var coins = GameManager.calculate_coins_earned()
+	coin_label.text = "Coins: $%d" % [coins];

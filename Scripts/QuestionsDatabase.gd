@@ -25,7 +25,7 @@ func load_questions():
 	else:
 		push_error("Could not open questions.json")
 
-func get_random_question() -> Dictionary:
+func get_random_question(turn: int) -> Dictionary:
 	if questions.is_empty():
 		return {}
 	
@@ -37,13 +37,14 @@ func get_random_question() -> Dictionary:
 	if available.is_empty():
 		used_questions.clear()
 		available = questions.duplicate()
-	
 	var question = available[randi() % available.size()]
+	while question.difficulty != turn:
+		question = available[randi() % available.size()]
 	used_questions.append(question)
 	return question
 
 func get_multiple_questions(count: int) -> Array:
 	var result = []
 	for i in range(count):
-		result.append(get_random_question())
+		result.append(get_random_question(1))
 	return result
