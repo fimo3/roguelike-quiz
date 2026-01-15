@@ -65,7 +65,9 @@ func _on_answer_selected(answer_index: int):
 
 		show_feedback("Правилно! +%d pts" % final_points, Color.GREEN)
 	else:
-		show_feedback("Грешно!", Color.RED)
+		var final_points = GameManager.decrease_score(-5)
+		
+		show_feedback("Грешно! %d pts" % final_points, Color.RED)
 	
 	update_ui()
 	await get_tree().create_timer(0.5).timeout

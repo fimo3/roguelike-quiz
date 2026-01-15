@@ -34,11 +34,12 @@ func get_random_question(turn: int) -> Dictionary:
 		if q not in used_questions:
 			available.append(q)
 	
-	if available.is_empty():
+	if available.is_empty() or available[0].difficulty > turn:
 		used_questions.clear()
 		available = questions.duplicate()
 	var question = available[randi() % available.size()]
-	while question.difficulty != turn:
+	push_error([question.difficulty, turn])
+	while question.difficulty > turn:
 		question = available[randi() % available.size()]
 	used_questions.append(question)
 	return question

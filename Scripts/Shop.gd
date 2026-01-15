@@ -4,6 +4,12 @@ extends Control
 @onready var coins_label = $CoinsLabel
 @onready var shop_container = $ShopContainer
 @onready var continue_button = $ContinueButton
+@onready var left_glove = $LeftGlove
+@onready var right_glove = $RightGlove
+@onready var chainmail = $chainmail
+@onready var hat = $hat
+@onready var boot_left = $bootLeft
+@onready var boot_right = $bootRight
 
 # Sample armor data - can be moved to JSON later
 var available_armor = [
@@ -34,6 +40,7 @@ var available_armor = [
 ]
 
 func _ready():
+	activate_armour()
 	update_coins_display()
 	populate_shop()
 	continue_button.pressed.connect(_on_continue_pressed)
@@ -101,6 +108,20 @@ func _on_buy_pressed(armor: Dictionary):
 		GameManager.equip_armor(armor)
 		update_coins_display()
 		populate_shop() # Refresh shop display
+		activate_armour()
 
 func _on_continue_pressed():
 	get_tree().change_scene_to_file("res://Scenes/QuizRound.tscn")
+func activate_armour():
+	if !GameManager.equipped_armor.is_empty():
+		for eq in GameManager.equipped_armor:
+			if eq.name == "Брониран нагръдник":
+				chainmail.visible = true
+			elif eq.name == "Шлем на мъдростта":
+				hat.visible = true
+			elif eq.name == "Ботуши на скоростта":
+				boot_left.visible = true
+				boot_right.visible = true
+			elif eq.name == "Ръкавици на точността":
+				left_glove.visible = true
+				right_glove.visible = true

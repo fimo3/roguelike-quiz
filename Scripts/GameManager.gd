@@ -40,6 +40,14 @@ func add_score(points: int):
 	current_score += final_points
 	return final_points
 
+func decrease_score(points: int):
+	#var final_points = int((points + flat_bonus) * point_multiplier)
+	if current_score == 0:
+		points = 0
+	current_score += points
+	return points
+
+
 func complete_round():
 	if current_score >= score_threshold:
 		var coins_earned = calculate_coins_earned()

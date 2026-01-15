@@ -1,12 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxlt8gv3h8jt1"]
+[gd_scene load_steps=7 format=3 uid="uid://dxlt8gv3h8jt1"]
 
 [ext_resource type="Script" uid="uid://bi7pyqv3elbpb" path="res://Scripts/Shop.gd" id="1_kjfcx"]
+[ext_resource type="Texture2D" uid="uid://qeg4arsyoefm" path="res://Assets/pixilart-drawing4.png" id="2_iidq5"]
+[ext_resource type="Texture2D" uid="uid://7motpxbbyuqu" path="res://Assets/pixilart-drawing6.png" id="3_wndna"]
+[ext_resource type="Texture2D" uid="uid://b2y6e1tp26iby" path="res://Assets/pixilart-drawing5.png" id="4_ckylj"]
+[ext_resource type="Texture2D" uid="uid://cowdaj5y05fj8" path="res://Assets/pixilart-drawing3.png" id="5_2aaoe"]
+[ext_resource type="Texture2D" uid="uid://doo6aj6dfefkn" path="res://Assets/pixilart-drawing7.png" id="6_ct2yw"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 3.0
+offset_right = -9.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kjfcx")
@@ -35,3 +44,45 @@ offset_top = 600.0
 offset_right = 1130.0
 offset_bottom = 631.0
 text = "Go"
+
+[node name="PixilartDrawing4" type="Sprite2D" parent="."]
+position = Vector2(795, 338)
+scale = Vector2(1.390625, 1.390625)
+texture = ExtResource("2_iidq5")
+
+[node name="LeftGlove" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(859.00006, 283.99994)
+scale = Vector2(1.6250001, 1.6250001)
+texture = ExtResource("3_wndna")
+
+[node name="RightGlove" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(731.0002, 283.99994)
+rotation = -6.2831855
+scale = Vector2(-1.625, 1.625)
+texture = ExtResource("3_wndna")
+
+[node name="chainmail" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(795.5, 307.5)
+scale = Vector2(1.5546875, 1.5546875)
+texture = ExtResource("4_ckylj")
+
+[node name="hat" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(789, 197.99998)
+scale = Vector2(0.82, 0.82)
+texture = ExtResource("5_2aaoe")
+
+[node name="bootLeft" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(821.4999, 467.00003)
+scale = Vector2(0.67968756, 0.42187473)
+texture = ExtResource("6_ct2yw")
+
+[node name="bootRight" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(768.50006, 467.00003)
+scale = Vector2(-0.68, 0.422)
+texture = ExtResource("6_ct2yw")
