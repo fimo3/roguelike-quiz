@@ -4,49 +4,49 @@
 [ext_resource type="Texture2D" uid="uid://c4rpcm1xy8k30" path="res://Assets/Answer.png" id="2_idj7w"]
 [ext_resource type="Texture2D" uid="uid://3m47g144jf6w" path="res://Assets/pixilart-drawing2.png" id="2_kln2b"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frkhe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grg3l"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kpch"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmxlf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vy5pj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50glp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jw32o"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1gob"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbw6q"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kln2b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgh2o"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kln2b"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbw6q"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tgeq"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1gob"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyqft"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jw32o"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwpts"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50glp"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fq0cl"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vy5pj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxkr1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmxlf"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0sclb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kpch"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_346fj"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grg3l"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w5on"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frkhe"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_erwvk"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1p5hy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1m7h"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1p5hy"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_erwvk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w5on"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_346fj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0sclb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxkr1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fq0cl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwpts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyqft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tgeq"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -72,8 +72,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(212.99994, 57)
-scale = Vector2(4.5972223, 4.5972223)
+position = Vector2(213, 57)
+scale = Vector2(4.59722, 4.59722)
 texture = ExtResource("2_kln2b")
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer"]
@@ -115,7 +115,7 @@ anchor_bottom = 0.5
 offset_left = -165.0
 offset_top = -25.0
 offset_right = 202.0
-offset_bottom = 28.68351
+offset_bottom = 28.6835
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_idj7w")
@@ -128,46 +128,46 @@ patch_margin_bottom = 13
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.30900002
+anchor_top = 0.309
 anchor_right = 1.0
-anchor_bottom = 0.61700004
-offset_left = 32.799988
-offset_top = 7.9419975
-offset_right = 8.199982
+anchor_bottom = 0.617
+offset_left = 32.8
+offset_top = 7.942
+offset_right = 8.19998
 offset_bottom = 5.04599
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_frkhe")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_grg3l")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_4kpch")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bmxlf")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_vy5pj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_50glp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jw32o")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_v1gob")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_pbw6q")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rgh2o")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kln2b")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rgh2o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pbw6q")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_v1gob")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jw32o")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_50glp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vy5pj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_bmxlf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4kpch")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_grg3l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_frkhe")
 text = "Start
 "
 icon_alignment = 1
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 0
-offset_left = 50.399994
+offset_left = 50.4
 offset_top = 133.0
 offset_right = 403.0
 offset_bottom = 176.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_3tgeq")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jyqft")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_hwpts")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fq0cl")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_sxkr1")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0sclb")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_346fj")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2w5on")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_erwvk")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_h1m7h")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1p5hy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_h1m7h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_erwvk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2w5on")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_346fj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0sclb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sxkr1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fq0cl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hwpts")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jyqft")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3tgeq")
 text = "Quit
 "

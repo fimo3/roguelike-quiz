@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://coxww10namtal"]
+[gd_scene load_steps=14 format=3 uid="uid://coxww10namtal"]
 
 [ext_resource type="Script" uid="uid://cpeudi4f2t7yu" path="res://Scripts/QuizRound.gd" id="1_5bybn"]
+[ext_resource type="Texture2D" uid="uid://diebhrler7d71" path="res://Assets/bg2.png" id="2_r4mml"]
+[ext_resource type="Script" uid="uid://csetbgf5xh52t" path="res://Scripts/Letter.gd" id="3_o5odc"]
+[ext_resource type="Texture2D" uid="uid://35ckm6ji44n1" path="res://Assets/a.png" id="4_oc3v8"]
+[ext_resource type="Texture2D" uid="uid://drt3sofupeloo" path="res://Assets/zh.png" id="5_763kc"]
+[ext_resource type="Texture2D" uid="uid://b1chd6arx5cd5" path="res://Assets/y.png" id="6_qnndp"]
+[ext_resource type="Texture2D" uid="uid://7j2ue71rsq87" path="res://Assets/lev.png" id="7_oc3v8"]
+[ext_resource type="Texture2D" uid="uid://7uik8t45yw0s" path="res://Assets/timer.png" id="8_qnndp"]
+[ext_resource type="Texture2D" uid="uid://bcdgaqxxtuwd" path="res://Assets/clock.png" id="9_cajb4"]
+[ext_resource type="Script" uid="uid://ceqe5rl1p25lt" path="res://Scripts/arrow.gd" id="9_pfcuh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cajb4"]
+size = Vector2(102, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfcuh"]
+size = Vector2(99, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccdgb"]
+size = Vector2(95, 100)
 
 [node name="QuizRound" type="Control"]
 layout_mode = 3
@@ -11,30 +29,69 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5bybn")
 
+[node name="background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="background"]
+scale = Vector2(4.50694, 4.50694)
+texture = ExtResource("2_r4mml")
+centered = false
+
+[node name="A" type="RigidBody2D" parent="background"]
+position = Vector2(436.785, 376)
+script = ExtResource("3_o5odc")
+
+[node name="Sprite2D" type="Sprite2D" parent="background/A"]
+texture = ExtResource("4_oc3v8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/A"]
+shape = SubResource("RectangleShape2D_cajb4")
+
+[node name="Zh" type="RigidBody2D" parent="background"]
+position = Vector2(1000, 100)
+script = ExtResource("3_o5odc")
+
+[node name="Sprite2D" type="Sprite2D" parent="background/Zh"]
+texture = ExtResource("5_763kc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Zh"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_pfcuh")
+
+[node name="Y" type="RigidBody2D" parent="background"]
+position = Vector2(300, 300)
+script = ExtResource("3_o5odc")
+
+[node name="Sprite2D" type="Sprite2D" parent="background/Y"]
+texture = ExtResource("6_qnndp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Y"]
+position = Vector2(-2.5, 2)
+shape = SubResource("RectangleShape2D_ccdgb")
+
 [node name="ThresholdLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.087000005
+anchor_left = 0.087
 anchor_top = 0.033
-anchor_right = 0.087000005
+anchor_right = 0.087
 anchor_bottom = 0.033
-offset_left = -90.22401
-offset_top = -11.384001
-offset_right = 88.16097
-offset_bottom = 11.615999
+offset_left = -90.224
+offset_top = -11.384
+offset_right = 88.161
+offset_bottom = 11.616
 text = "Round: 1 | Target: 100"
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.053000003
+anchor_left = 0.053
 anchor_top = 0.079
-anchor_right = 0.053000003
+anchor_right = 0.053
 anchor_bottom = 0.079
-offset_left = -51.056004
-offset_top = -18.192001
-offset_right = 51.943996
-offset_bottom = 4.8079987
+offset_left = -51.056
+offset_top = -18.192
+offset_right = 51.944
+offset_bottom = 4.808
 text = "Score: 0 / 100"
 
 [node name="TimerLabel" type="Label" parent="."]
@@ -44,23 +101,23 @@ anchor_left = 0.043
 anchor_top = 0.126
 anchor_right = 0.043
 anchor_bottom = 0.126
-offset_left = -39.536003
-offset_top = -3.6480026
-offset_right = 39.463997
-offset_bottom = 19.351997
-text = "Time: 60.0"
+offset_left = -39.536
+offset_top = -3.648
+offset_right = 39.464
+offset_bottom = 19.352
+text = "Time: 120.0"
 
 [node name="QuestionLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.25800002
+anchor_top = 0.258
 anchor_right = 0.5
-anchor_bottom = 0.25800002
+anchor_bottom = 0.258
 offset_left = -276.0
-offset_top = -17.184006
+offset_top = -17.184
 offset_right = 324.0
-offset_bottom = 16.815994
+offset_bottom = 16.816
 theme_override_font_sizes/font_size = 24
 text = "Question appears here"
 autowrap_mode = 2
@@ -82,4 +139,23 @@ offset_left = 9.0
 offset_top = 56.0
 offset_right = 70.0
 offset_bottom = 79.0
-text = "Coins: $0"
+text = "Leva: 0"
+
+[node name="Lev" type="Sprite2D" parent="."]
+position = Vector2(78, 68)
+scale = Vector2(0.1925, 0.1925)
+texture = ExtResource("7_oc3v8")
+
+[node name="Timer" type="Sprite2D" parent="."]
+position = Vector2(59, 159)
+scale = Vector2(1.27, 1.27)
+texture = ExtResource("8_qnndp")
+
+[node name="Arrow" type="Node2D" parent="."]
+position = Vector2(58, 164)
+script = ExtResource("9_pfcuh")
+
+[node name="Clock" type="Sprite2D" parent="Arrow"]
+position = Vector2(0, -15)
+scale = Vector2(0.3625, 0.3625)
+texture = ExtResource("9_cajb4")

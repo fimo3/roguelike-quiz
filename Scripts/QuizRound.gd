@@ -9,7 +9,7 @@ extends Control
 
 var current_question: Dictionary = {}
 var round_time: float = 120.0
-var base_round_time: float = 120.0
+@export var base_round_time: float = 120.0
 
 func _ready():
 	GameManager.reset_round_modifiers()
@@ -19,12 +19,11 @@ func _ready():
 
 func _process(delta):
 	if round_time <= 0:
-		round_time = 0;
+		round_time = 0
 		end_round()
-		question_label.queue_free()
-		answer_container.queue_free()
-	else:
-		round_time -= delta
+		return
+	
+	round_time -= delta
 	timer_label.text = "Time: %.1f" % round_time
 	_on_score_change()
 
@@ -62,7 +61,6 @@ func _on_answer_selected(answer_index: int):
 					round_time += armor.bottom_row_time_bonus
 		
 		var final_points = GameManager.add_score(points)
-
 		show_feedback("Правилно! +%d pts" % final_points, Color.GREEN)
 	else:
 		var final_points = GameManager.decrease_score(-5)
@@ -97,14 +95,8 @@ func end_round():
 	if success:
 		get_tree().change_scene_to_file("res://Scenes/Shop.tscn")
 	else:
-		var label = Label.new()
-		label.text = "Неуспешно! Score: %d/%d" % [GameManager.current_score, GameManager.score_threshold]
-		label.position = Vector2(400, 300)
-		add_child(label)
-		
-		await get_tree().create_timer(2.0).timeout
-		get_tree().change_scene_to_file("res://Scenes/Main.tscn")
-		
+		get_tree().change_scene_to_file("res://Scenes/Lose.tscn")
+
 func _on_score_change():
 	var coins = GameManager.calculate_coins_earned()
-	coin_label.text = "Coins: $%d" % [coins];
+	coin_label.text = "Leva: %d" % [coins]

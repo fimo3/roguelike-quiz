@@ -1,11 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxlt8gv3h8jt1"]
+[gd_scene load_steps=21 format=3 uid="uid://dxlt8gv3h8jt1"]
 
 [ext_resource type="Script" uid="uid://bi7pyqv3elbpb" path="res://Scripts/Shop.gd" id="1_kjfcx"]
+[ext_resource type="Texture2D" uid="uid://diebhrler7d71" path="res://Assets/bg2.png" id="2_1mgah"]
 [ext_resource type="Texture2D" uid="uid://qeg4arsyoefm" path="res://Assets/pixilart-drawing4.png" id="2_iidq5"]
+[ext_resource type="Script" uid="uid://csetbgf5xh52t" path="res://Scripts/Letter.gd" id="3_r8bg4"]
 [ext_resource type="Texture2D" uid="uid://7motpxbbyuqu" path="res://Assets/pixilart-drawing6.png" id="3_wndna"]
 [ext_resource type="Texture2D" uid="uid://b2y6e1tp26iby" path="res://Assets/pixilart-drawing5.png" id="4_ckylj"]
+[ext_resource type="Texture2D" uid="uid://35ckm6ji44n1" path="res://Assets/a.png" id="4_m1c0q"]
 [ext_resource type="Texture2D" uid="uid://cowdaj5y05fj8" path="res://Assets/pixilart-drawing3.png" id="5_2aaoe"]
+[ext_resource type="Texture2D" uid="uid://drt3sofupeloo" path="res://Assets/zh.png" id="5_dael7"]
 [ext_resource type="Texture2D" uid="uid://doo6aj6dfefkn" path="res://Assets/pixilart-drawing7.png" id="6_ct2yw"]
+[ext_resource type="Texture2D" uid="uid://b1chd6arx5cd5" path="res://Assets/y.png" id="6_gufdo"]
+[ext_resource type="Texture2D" uid="uid://bghw3hdxi18ho" path="res://Assets/go.png" id="7_m1c0q"]
+[ext_resource type="Texture2D" uid="uid://7j2ue71rsq87" path="res://Assets/lev.png" id="12_r8bg4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dael7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gufdo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ox0pj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvogg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_estnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk6g2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgt2b"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -20,6 +41,48 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kjfcx")
 
+[node name="background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="background"]
+scale = Vector2(4.50694, 4.50694)
+texture = ExtResource("2_1mgah")
+centered = false
+
+[node name="A" type="RigidBody2D" parent="background"]
+position = Vector2(344, 376)
+mass = 5.0
+script = ExtResource("3_r8bg4")
+
+[node name="Sprite2D" type="Sprite2D" parent="background/A"]
+texture = ExtResource("4_m1c0q")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="background/A"]
+position = Vector2(-50, -50)
+polygon = PackedVector2Array(98, 96, 101, 80, 92, 76, 86, 79, 79, 70, 52, 10, 86, 9, 86, 6, 86, 0, 43, 1, 37, 7, 9, 82, 4, 81, 1, 79, -1, 93, 1, 99, 8, 101, 15, 96, 29, 58, 65, 59, 78, 91, 85, 96, 88, 99, 98, 99)
+
+[node name="Zh" type="RigidBody2D" parent="background"]
+position = Vector2(1000, 100)
+mass = 5.0
+script = ExtResource("3_r8bg4")
+
+[node name="Sprite2D" type="Sprite2D" parent="background/Zh"]
+texture = ExtResource("5_dael7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/Zh"]
+polygon = PackedVector2Array(-48, 40, -45, 47, -33, 44, -20, 34, -18, 20, -15, 4, -5, 5, -5, 27, -3, 47, 6, 49, 2, 2, 4, 2, 8, 22, 12, 37, 16, 39, 23, 43, 32, 45, 36, 46, 43, 47, 45, 47, 43, 39, 37, 39, 32, 37, 24, 32, 20, 23, 17, 11, 16, 5, 28, 8, 44, 10, 50, 6, 49, -2, 13, -3, 12, -10, 15, -19, 19, -29, 28, -34, 44, -40, 49, -40, 49, -49, 46, -50, 35, -49, 26, -47, 14, -36, 9, -27, 4, -17, 3, -8, 4, 0, 2, -4, 0, -21, 2, -33, 2, -49, -5, -49, -5, -40, -7, -26, -5, -4, -13, -4, -16, -20, -17, -30, -26, -44, -37, -50, -45, -50, -45, -45, -40, -40, -36, -39, -28, -30, -25, -18, -24, -8, -40, -6, -48, -6, -49, 3, -35, 5, -23, 4, -22, 10, -23, 17, -26, 28, -38, 35)
+
+[node name="Y" type="RigidBody2D" parent="background"]
+position = Vector2(401, 100)
+mass = 5.0
+script = ExtResource("3_r8bg4")
+
+[node name="Sprite2D" type="Sprite2D" parent="background/Y"]
+texture = ExtResource("6_gufdo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="background/Y"]
+position = Vector2(-150, -150)
+polygon = PackedVector2Array(100, 121, 100, 107, 102, 102, 107, 100, 153, 100, 149, 134, 176, 140, 186, 145, 194, 158, 193, 175, 189, 186, 184, 197, 176, 199, 160, 201, 137, 201, 126, 201, 119, 195, 121, 186, 126, 167, 134, 152, 141, 134, 144, 113, 144, 107, 121, 110, 120, 120, 118, 124, 116, 126, 110, 128, 105, 126)
+
 [node name="CoinsLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 10.0
@@ -27,7 +90,7 @@ offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 33.0
 theme_override_font_sizes/font_size = 20
-text = "$ 0"
+text = "0 leva"
 
 [node name="ShopContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -39,50 +102,65 @@ theme_override_constants/separation = 15
 
 [node name="ContinueButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1100.0
-offset_top = 600.0
-offset_right = 1130.0
-offset_bottom = 631.0
-text = "Go"
+offset_left = 1070.0
+offset_top = 574.0
+offset_right = 1148.0
+offset_bottom = 642.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dael7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gufdo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ox0pj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wvogg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_estnu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mk6g2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kgt2b")
+
+[node name="Go" type="Sprite2D" parent="."]
+position = Vector2(1110, 611)
+texture = ExtResource("7_m1c0q")
 
 [node name="PixilartDrawing4" type="Sprite2D" parent="."]
 position = Vector2(795, 338)
-scale = Vector2(1.390625, 1.390625)
+scale = Vector2(1.39063, 1.39063)
 texture = ExtResource("2_iidq5")
 
 [node name="LeftGlove" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(859.00006, 283.99994)
-scale = Vector2(1.6250001, 1.6250001)
+position = Vector2(859, 284)
+scale = Vector2(1.625, 1.625)
 texture = ExtResource("3_wndna")
 
 [node name="RightGlove" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(731.0002, 283.99994)
-rotation = -6.2831855
+position = Vector2(731, 284)
+rotation = -6.28319
 scale = Vector2(-1.625, 1.625)
 texture = ExtResource("3_wndna")
 
 [node name="chainmail" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(795.5, 307.5)
-scale = Vector2(1.5546875, 1.5546875)
+scale = Vector2(1.55469, 1.55469)
 texture = ExtResource("4_ckylj")
 
 [node name="hat" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(789, 197.99998)
+position = Vector2(789, 198)
 scale = Vector2(0.82, 0.82)
 texture = ExtResource("5_2aaoe")
 
 [node name="bootLeft" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(821.4999, 467.00003)
-scale = Vector2(0.67968756, 0.42187473)
+position = Vector2(821.5, 467)
+scale = Vector2(0.679688, 0.421875)
 texture = ExtResource("6_ct2yw")
 
 [node name="bootRight" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(768.50006, 467.00003)
+position = Vector2(768.5, 467)
 scale = Vector2(-0.68, 0.422)
 texture = ExtResource("6_ct2yw")
+
+[node name="Lev" type="Sprite2D" parent="."]
+position = Vector2(19, 57)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("12_r8bg4")

@@ -16,25 +16,25 @@ var available_armor = [
 	{
 		"name": "Брониран нагръдник",
 		"description": "+0.2x множител на точки",
-		"cost": 50,
+		"cost": 30,
 		"point_multiplier": 0.2
 	},
 	{
 		"name": "Шлем на мъдростта",
 		"description": "+5 бонус точки на отговор",
-		"cost": 40,
+		"cost": 20,
 		"flat_bonus": 5
 	},
 	{
 		"name": "Ботуши на скоростта",
 		"description": "+3 секунди при отговор от долния ред",
-		"cost": 60,
+		"cost": 40,
 		"bottom_row_time_bonus": 3.0
 	},
 	{
 		"name": "Ръкавици на точността",
 		"description": "+0.1x множител на време",
-		"cost": 70,
+		"cost": 50,
 		"time_multiplier": 0.1
 	}
 ]
@@ -46,7 +46,7 @@ func _ready():
 	continue_button.pressed.connect(_on_continue_pressed)
 
 func update_coins_display():
-	coins_label.text = "Монети: %d" % GameManager.coins
+	coins_label.text = "%d leva" % GameManager.coins
 
 func populate_shop():
 	# Clear existing items
